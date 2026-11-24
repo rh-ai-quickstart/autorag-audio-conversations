@@ -5,9 +5,10 @@ from S3, transcribes them with Docling ASR and optimizes RAG patterns against a 
 benchmark. You can then select a pattern, index your full corpus and ask questions grounded in
 the recordings.
 
-The bundled dataset contains English MP3 recordings, 20 benchmark questions and reference
-transcripts under [data/rag/audio/sample/](data/rag/audio/sample/README.md). You can also
-[use your own recordings](data/README.md).
+The repository bundles five English MP3 recordings, 40 benchmark questions, and reference
+transcripts across conversation, customer-support, and customer-billing datasets. The default is
+the [conversation dataset](data/rag/audio/conversations/README.md); see
+[all bundled datasets](data/README.md) or [use your own recordings](data/README.md).
 
 ## Choose how to run
 
@@ -43,4 +44,4 @@ The walkthroughs link to the relevant product setup procedures.
 A complete product walkthrough with recorded optimization/indexing runs and a grounded answer
 remains to be documented. Public corpus redistribution clearance and listening review remain
 pending. Helper code is Apache-2.0; corpus rights are separate. See [NOTICE](NOTICE) and
-[data provenance](data/rag/audio/sample/README.md).
+[data provenance](data/rag/audio/conversations/README.md).

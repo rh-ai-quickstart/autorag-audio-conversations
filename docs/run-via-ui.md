@@ -29,17 +29,17 @@ Configuration for this walkthrough is entered in the dashboard.
 
 ## Prepare the sample data
 
-Upload the three recordings from `data/rag/audio/sample/documents/` to your S3 bucket.
+Upload the three recordings from `data/rag/audio/conversations/documents/` to your S3 bucket.
 Keep the repository's directory structure so that their object keys are:
 
 ```text
-data/rag/audio/sample/documents/story_10.mp3
-data/rag/audio/sample/documents/story_100.mp3
-data/rag/audio/sample/documents/story_1015.mp3
+data/rag/audio/conversations/documents/story_10.mp3
+data/rag/audio/conversations/documents/story_100.mp3
+data/rag/audio/conversations/documents/story_1015.mp3
 ```
 
-Upload `data/rag/audio/sample/benchmark.json` to
-`data/rag/audio/sample/benchmark.json` in the bucket, or select that local benchmark file when
+Upload `data/rag/audio/conversations/benchmark.json` to
+`data/rag/audio/conversations/benchmark.json` in the bucket, or select that local benchmark file when
 the dashboard offers local evaluation-dataset upload. Its source keys must match the uploaded
 recordings. Keep reference transcripts outside the selected documents directory.
 
@@ -48,7 +48,7 @@ The S3 Connection must provide access to the selected bucket and recordings. Use
 update every corresponding `correct_answer_document_keys` entry in the benchmark.
 
 >!note
-> Why that path `data/rag/audio/sample/benchmark.json` need to be exact the same?
+> Why that path `data/rag/audio/conversations/benchmark.json` need to be exact the same?
 > Because we are using in the AI4RAG repository precise key paths. Which mean that
 > file benchmark.json need to provide the full path to the targeted files for questions.
 > You can use your own files, but remember that You need to write a full correct path.
@@ -77,7 +77,7 @@ Enter the run name and description, then select the project's MaaS Connection.
 
 ### Recordings in S3
 
-Select the S3 Connection and bucket, then browse to `data/rag/audio/sample/documents/`
+Select the S3 Connection and bucket, then browse to `data/rag/audio/conversations/documents/`
 and select the recordings to use.
 
 ![Select the S3 Connection](../images/5_set_s3_connection.png)

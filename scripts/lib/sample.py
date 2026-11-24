@@ -155,7 +155,7 @@ def validate_questions(rows, allowed_keys: set[str], label: str) -> None:
 
 
 def load_sample(
-    documents_dir: str = "data/rag/audio/sample/documents",
+    documents_dir: str = "data/rag/audio/conversations/documents",
     benchmark_key: str | None = None,
     root: Path = ROOT,
 ) -> tuple[list[dict], list]:

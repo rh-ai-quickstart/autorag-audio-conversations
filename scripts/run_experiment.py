@@ -76,7 +76,7 @@ def configuration(env: dict, kind: str = "optimization") -> dict:
         non_placeholder(value, name)
         config[field] = value
     config["preset"] = env.get("AUTORAG_PRESET", "speed").strip()
-    raw = env.get("AUTORAG_INPUT_DATA_KEYS", '["data/rag/audio/sample/documents"]').strip()
+    raw = env.get("AUTORAG_INPUT_DATA_KEYS", '["data/rag/audio/conversations/documents"]').strip()
     try:
         config["input_data_keys"] = json.loads(raw)
     except json.JSONDecodeError:
@@ -96,7 +96,8 @@ def configuration(env: dict, kind: str = "optimization") -> dict:
         optimization_metric=env.get("AUTORAG_OPTIMIZATION_METRIC", "answer_correctness").strip(),
         optimization_max_rag_patterns=patterns,
     )
-    config["test_data_key"] = env.get("AUTORAG_TEST_DATA_KEY", "data/rag/audio/sample/benchmark.json").strip()
+    default_benchmark = "data/rag/audio/conversations/benchmark.json"
+    config["test_data_key"] = env.get("AUTORAG_TEST_DATA_KEY", default_benchmark).strip()
     if flag(env, "AUTORAG_UPLOAD_TEST_DATASETS"):
         require(
             config["test_data_bucket_name"] == config["bucket"]

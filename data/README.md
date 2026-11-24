@@ -5,12 +5,21 @@ to S3 and select them in the dashboard, or follow the [code walkthrough](../docs
 For the code path, the same two settings select local files and their destinations in S3:
 
 ```dotenv
-AUTORAG_INPUT_DATA_KEYS=["data/rag/audio/sample/documents"]
-AUTORAG_TEST_DATA_KEY=data/rag/audio/sample/benchmark.json
+AUTORAG_INPUT_DATA_KEYS=["data/rag/audio/conversations/documents"]
+AUTORAG_TEST_DATA_KEY=data/rag/audio/conversations/benchmark.json
 ```
 
-The three bundled English MP3 recordings and 20-question benchmark are ready in those locations.
-Their provenance is in [the sample README](rag/audio/sample/README.md).
+The default conversations dataset contains three English MP3 recordings and 20 benchmark questions.
+Two additional support datasets are also bundled:
+
+| Dataset | Recordings | Benchmark questions | Provenance |
+| --- | ---: | ---: | --- |
+| `data/rag/audio/conversations/` | 3 | 20 | [Conversations README](rag/audio/conversations/README.md) |
+| `data/rag/audio/customer_support/` | 1 | 10 | [Customer support README](rag/audio/customer_support/README.md) |
+| `data/rag/audio/customer_billings/` | 1 | 10 | [Customer billing README](rag/audio/customer_billings/README.md) |
+
+To use a support dataset, replace both paths in `.env` with that dataset's `documents/`
+directory and `benchmark.json` path.
 
 ## Use your own recordings
 

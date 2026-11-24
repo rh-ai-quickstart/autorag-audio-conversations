@@ -57,8 +57,8 @@ Fill the following values in `.env` before running:
 | `AWS_SESSION_TOKEN` | Optional session token when using temporary AWS credentials |
 | `DOWNLOAD_ARTIFACTS` | Example sets `true`: download the best optimization pattern and starter kit after success; absent/`false` skips downloads |
 | `AWS_S3_BUCKET` | Optional artifact bucket override; also accepts `RHOAI_TEST_ARTIFACTS_BUCKET`; blank discovers the run root, then falls back to the input bucket |
-| `AUTORAG_INPUT_DATA_KEYS` | One documents directory; local upload source and S3 destination; defaults to `["data/rag/audio/sample/documents"]` |
-| `AUTORAG_TEST_DATA_KEY` | Benchmark JSON path; local upload source and S3 destination; defaults to `data/rag/audio/sample/benchmark.json` |
+| `AUTORAG_INPUT_DATA_KEYS` | One documents directory; local upload source and S3 destination; defaults to `["data/rag/audio/conversations/documents"]` |
+| `AUTORAG_TEST_DATA_KEY` | Benchmark JSON path; local upload source and S3 destination; defaults to `data/rag/audio/conversations/benchmark.json` |
 | `AUTORAG_OPTIMIZATION_METRIC` | `answer_correctness` |
 | `AUTORAG_MAX_RAG_PATTERNS` | `4` (supported range 4–10) |
 | `AUTORAG_PRESET` | `speed` or `balanced` |
@@ -93,8 +93,8 @@ The bundled sample contains three English MP3 recordings and 20 benchmark questi
 Keep these defaults to use it:
 
 ```dotenv
-AUTORAG_INPUT_DATA_KEYS=["data/rag/audio/sample/documents"]
-AUTORAG_TEST_DATA_KEY=data/rag/audio/sample/benchmark.json
+AUTORAG_INPUT_DATA_KEYS=["data/rag/audio/conversations/documents"]
+AUTORAG_TEST_DATA_KEY=data/rag/audio/conversations/benchmark.json
 AUTORAG_UPLOAD_TEST_DATASETS=true
 DOWNLOAD_ARTIFACTS=true
 ```
@@ -108,7 +108,7 @@ paths to their existing object keys. Workstation S3 credentials are still needed
 `DOWNLOAD_ARTIFACTS=true`.
 
 >!note
-> Why that path `data/rag/audio/sample/benchmark.json` need to be exact the same?
+> Why that path `data/rag/audio/conversations/benchmark.json` need to be exact the same?
 > Because we are using in the AI4RAG repository precise key paths. Which mean that
 > file benchmark.json need to provide the full path to the targeted files for questions.
 > You can use your own files, but remember that You need to write a full correct path.

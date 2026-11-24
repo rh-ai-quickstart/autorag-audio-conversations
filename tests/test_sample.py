@@ -34,8 +34,8 @@ from lib.storage import stage, upload_plan  # noqa: E402
 def config():
     return {
         "bucket": "sample-bucket",
-        "input_data_keys": ["data/rag/audio/sample/documents"],
-        "test_data_key": "data/rag/audio/sample/benchmark.json",
+        "input_data_keys": ["data/rag/audio/conversations/documents"],
+        "test_data_key": "data/rag/audio/conversations/benchmark.json",
         "input_data_secret_name": "audio-data-connection",
         "test_data_secret_name": "audio-data-connection",
         "maas_secret_name": "audio-maas-connection",
@@ -136,7 +136,7 @@ class SampleDataTests(unittest.TestCase):
         validate_pipeline_params(
             params, read_json(ROOT / "tests/fixtures/optimization.parameters.json"), OPTIMIZATION_PIPELINE
         )
-        benchmark = read_json(ROOT / "data/rag/audio/sample/benchmark.json")
+        benchmark = read_json(ROOT / "data/rag/audio/conversations/benchmark.json")
         rendered = render_config_questions(benchmark, loaded)
         self.assertEqual(
             rendered[0]["correct_answer_document_keys"],
@@ -170,9 +170,9 @@ class SampleDataTests(unittest.TestCase):
         self.assertEqual(
             {entry["object_key"] for entry in files},
             {
-                "data/rag/audio/sample/documents/story_10.mp3",
-                "data/rag/audio/sample/documents/story_100.mp3",
-                "data/rag/audio/sample/documents/story_1015.mp3",
+                "data/rag/audio/conversations/documents/story_10.mp3",
+                "data/rag/audio/conversations/documents/story_100.mp3",
+                "data/rag/audio/conversations/documents/story_1015.mp3",
             },
         )
 
@@ -205,7 +205,7 @@ class SampleDataTests(unittest.TestCase):
         self.assertEqual(
             keys,
             {
-                f"data/rag/audio/sample/{path}"
+                f"data/rag/audio/conversations/{path}"
                 for path in (
                     "documents/story_10.mp3",
                     "documents/story_100.mp3",
@@ -216,9 +216,9 @@ class SampleDataTests(unittest.TestCase):
         )
         rendered = json.loads(plan[-1]["body"])
         self.assertTrue(all(key in keys for row in rendered for key in row["correct_answer_document_keys"]))
-        original = read_json(ROOT / "data/rag/audio/sample/benchmark.json")
+        original = read_json(ROOT / "data/rag/audio/conversations/benchmark.json")
         self.assertTrue(
-            original[0]["correct_answer_document_keys"][0].startswith("data/rag/audio/sample/documents/")
+            original[0]["correct_answer_document_keys"][0].startswith("data/rag/audio/conversations/documents/")
         )
 
     def test_custom_corpus_runs_with_audio_and_benchmark_only(self):
@@ -461,7 +461,7 @@ class EvidenceTests(unittest.TestCase):
                 directory / "answers.json",
                 directory / "evidence.json",
             )
-            benchmark = read_json(ROOT / "data/rag/audio/sample/benchmark.json")
+            benchmark = read_json(ROOT / "data/rag/audio/conversations/benchmark.json")
             answers = [
                 {
                     "question": row["question"],

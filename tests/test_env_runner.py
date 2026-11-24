@@ -114,8 +114,8 @@ class EnvRunnerTests(unittest.TestCase):
         env = environment()
         env["TEST_DATA_BUCKET_NAME"] = "benchmark-bucket"
         params = runner.optimization_params(runner.configuration(env))
-        self.assertEqual(params["input_data_keys"], ["data/rag/audio/sample/documents"])
-        self.assertEqual(params["test_data_key"], "data/rag/audio/sample/benchmark.json")
+        self.assertEqual(params["input_data_keys"], ["data/rag/audio/conversations/documents"])
+        self.assertEqual(params["test_data_key"], "data/rag/audio/conversations/benchmark.json")
         self.assertEqual(params["optimization_metric"], "answer_correctness")
         self.assertEqual(params["optimization_max_rag_patterns"], 4)
         self.assertEqual(params["test_data_bucket_name"], "benchmark-bucket")
@@ -137,7 +137,7 @@ class EnvRunnerTests(unittest.TestCase):
             ("AUTORAG_EMBEDDING_MODELS", "[bad json"),
             ("AUTORAG_MAX_RAG_PATTERNS", "3"),
             ("AUTORAG_INPUT_DATA_KEYS", "[]"),
-            ("AUTORAG_TEST_DATA_KEY", "data/rag/audio/sample/documents/labels.json"),
+            ("AUTORAG_TEST_DATA_KEY", "data/rag/audio/conversations/documents/labels.json"),
             ("RHOAI_PIPELINE_RUN_TIMEOUT", "0"),
         ):
             with self.subTest(name=name):
@@ -328,7 +328,7 @@ class EnvRunnerTests(unittest.TestCase):
             )
             self.assertEqual(params["graph_extraction_config"], {"mode": "constrained"})
             self.assertEqual(params["collection_name"], "new_collection")
-            self.assertEqual(params["input_data_keys"], ["data/rag/audio/sample/documents"])
+            self.assertEqual(params["input_data_keys"], ["data/rag/audio/conversations/documents"])
             receipt = read_json(directory / "receipt.json")
             self.assertEqual(receipt["collection_name"], "new_collection")
             self.assertEqual(receipt["pattern_sha256"], sha256(pattern_path))
@@ -367,12 +367,12 @@ class EnvRunnerTests(unittest.TestCase):
             plan = upload.call_args.args[2]
             self.assertEqual(len(plan), 4)
             self.assertEqual(
-                sum(item["key"].startswith("data/rag/audio/sample/documents/") for item in plan), 3
+                sum(item["key"].startswith("data/rag/audio/conversations/documents/") for item in plan), 3
             )
             self.assertEqual(sum(item["key"].endswith("/benchmark.json") for item in plan), 1)
             params = client.run_pipeline.call_args.kwargs["params"]
-            self.assertEqual(params["input_data_keys"], ["data/rag/audio/sample/documents"])
-            self.assertEqual(params["test_data_key"], "data/rag/audio/sample/benchmark.json")
+            self.assertEqual(params["input_data_keys"], ["data/rag/audio/conversations/documents"])
+            self.assertEqual(params["test_data_key"], "data/rag/audio/conversations/benchmark.json")
 
     def test_one_command_accepts_user_audio_and_benchmark_without_preparation(self):
         with (
