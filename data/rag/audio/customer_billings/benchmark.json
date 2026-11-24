@@ -1,0 +1,55 @@
+[
+  {
+    "question": "What does Benjamin say his finance team concluded about the taxes in the amount Atomic is asking for?",
+    "correct_answers": ["The taxes are included", "Taxes are included in that amount"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "What does Benjamin predict will most likely be the next step after the tax discussion?",
+    "correct_answers": ["Asking for payment details", "Requesting where the money should be sent"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "According to Benjamin's speculation, what kind of account will the incoming transfer come from?",
+    "correct_answers": ["An account unrelated to crypto", "A Canadian account with no relation to cryptocurrency"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "Where does Benjamin say Atomic Wallet was founded and headquartered?",
+    "correct_answers": ["Estonia", "Tallinn, Estonia", "A Baltic country"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "What 24-hour trading volume does Benjamin cite for Atomic?",
+    "correct_answers": ["About $650 million", "$650 million"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "Where does Benjamin say he is speaking from when offering his personal opinion?",
+    "correct_answers": ["Geneva, Switzerland", "Switzerland"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "Which exchange does Benjamin suggest asking Atomic to transfer the money to?",
+    "correct_answers": ["NDAX", "The NDAX exchange"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "What type of tax does Benjamin say the approximately $27,000 extra fee includes?",
+    "correct_answers": ["Capital gains tax", "Capital gains tax, not income tax"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "According to Benjamin, which kind of traders pay income tax rather than capital gains tax?",
+    "correct_answers": ["Licensed and registered day traders", "People who trade for a living"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  },
+  {
+    "question": "What calculation does Benjamin say determines the amount subject to tax?",
+    "correct_answers": [
+      "The amount withdrawn minus the amount transferred or invested",
+      "Withdrawal amount minus investment amount"
+    ],
+    "correct_answer_document_keys": ["data/rag/audio/customer_billings/documents/en-support-billing.mp3"]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What name does the caller introduce himself with?",
+    "correct_answers": ["Steven", "Stephen"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "Which department does the caller say he is calling from?",
+    "correct_answers": ["The finance department", "Finance department"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "Who does the caller say the customer spoke with before?",
+    "correct_answers": ["Michael"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "What does the caller say he wants to help the customer do with the money on the platform?",
+    "correct_answers": ["Withdraw it back to their bank", "Make a quick and easy withdrawal to their bank"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "How long does the caller initially say the withdrawal process will take?",
+    "correct_answers": ["Five to ten minutes", "5 to 10 minutes"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "Which remote-access application does the caller ask the customer to open?",
+    "correct_answers": ["AnyDesk"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "Which phone does the caller move to after saying the Pixel cannot be shared?",
+    "correct_answers": ["The Samsung phone", "Samsung"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "What AnyDesk ID does the caller read from the Samsung phone?",
+    "correct_answers": ["1037498400", "1 0 3 7 4 9 8 4 0 0"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "Which application does the caller say he will help download and verify on the phone?",
+    "correct_answers": ["Cash App", "The Cash App application"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  },
+  {
+    "question": "What reason does the computer give when the Cash App QR code cannot be used?",
+    "correct_answers": ["It is not available in the customer's country", "Not available in your country"],
+    "correct_answer_document_keys": ["data/rag/audio/customer_support/documents/en-customer-support.mp3"]
+  }
+]
