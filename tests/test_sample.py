@@ -218,7 +218,9 @@ class SampleDataTests(unittest.TestCase):
         self.assertTrue(all(key in keys for row in rendered for key in row["correct_answer_document_keys"]))
         original = read_json(ROOT / "data/rag/audio/conversations/benchmark.json")
         self.assertTrue(
-            original[0]["correct_answer_document_keys"][0].startswith("data/rag/audio/conversations/documents/")
+            original[0]["correct_answer_document_keys"][0].startswith(
+                "data/rag/audio/conversations/documents/"
+            )
         )
 
     def test_custom_corpus_runs_with_audio_and_benchmark_only(self):
