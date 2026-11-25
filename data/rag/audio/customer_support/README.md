@@ -4,7 +4,7 @@ This dataset contains one English customer-support call:
 
 | Recording | Reference text | Benchmark questions |
 | --- | --- | ---: |
-| `documents/en-customer-support.mp3` | `reference/en-customer-support.txt` | 10 |
+| `documents/en-customer-support-standard.mp3` | `reference/en-customer-support.txt` | 10 |
 
 The reference file is an automatic Faster Whisper `small.en` transcript created locally on
 2026-11-24. It has not undergone a full human listening review. Names, numbers, and unusual
@@ -18,6 +18,7 @@ repository's code license does not grant rights to this recording or its derived
 questions.
 
 Only `documents/` and `benchmark.json` are uploaded by the runner. Reference text stays local.
+The original 8 kHz MPEG-2.5 recording is retained in `source/` and is not uploaded.
 
 ```dotenv
 AUTORAG_INPUT_DATA_KEYS=["data/rag/audio/customer_support/documents"]
